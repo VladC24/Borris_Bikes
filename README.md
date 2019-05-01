@@ -1,4 +1,3 @@
 # Borris Bikes
 
-This project is for a network of docking stations and bikes in London, that everyone can use.
-
+This is a project that creates a network of docking stations for bikes in London, that everyone can use.
