@@ -1,3 +1,5 @@
+require_relative 'Bike'
+
 class DockingStation 
   attr_reader :bikes
 
@@ -6,21 +8,14 @@ class DockingStation
   end
 
   def release_bike
-    Bike.new
+    raise "No bikes in the dock!" if @bikes.empty?
+    @bikes.pop 
   end
 
   def return_bike(bike)
-    bikes << bike
-    bikes.length
+    @bikes << bike
+    return "Bike docked"
   end
-
 end
 
-class Bike
-  
-  def working?
-    true
-  end
-  
-end
 
