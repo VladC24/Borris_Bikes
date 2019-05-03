@@ -13,8 +13,12 @@ class DockingStation
   end
 
   def return_bike(bike)
-    @bikes << bike
-    return "Bike docked"
+    if @bikes.length < 1
+      @bikes << bike
+      return "Bike docked"
+    else 
+      raise "Dock is full!" 
+    end
   end
 end
 
