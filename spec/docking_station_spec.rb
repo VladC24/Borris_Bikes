@@ -27,10 +27,10 @@ describe DockingStation do
     }.to raise_error("No bikes in the dock!")
   end
 
-  it "gives an error if the user wants to dock a bike and docking station is full" do
+  it "gives an error if the user wants to dock a bike and docking station is full (after 20 bikes)" do
     station = DockingStation.new
     bike = Bike.new
-    station.return_bike(bike)
+    20.times {station.return_bike(bike)}
     expect {
       station.return_bike(bike)
     }.to raise_error("Dock is full!")
